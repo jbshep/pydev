@@ -34,31 +34,34 @@ argument-rgx=[a-z\_][a-z0-9_]{0,39}$
 EOPL
 
 cat >Makefile <<EOM
-.PHONY all
-all:
-	codestyle typecheck lint test
+.PHONY: all
+all: codestyle typecheck lint test
 
-.PHONY codestyle
+.PHONY: codestyle
 codestyle:
 	black -l 79 src/ tests/
 
-.PHONY typecheck
+.PHONY: typecheck
 typecheck:
 	mypy --ignore-missing-imports src/
 
-.PHONY lint
+.PHONY: lint
 lint:
 	pylint src/
 
-.PHONY test
+.PHONY: test
 test:
 	pytest tests/
 
-.PHONY clean
+.PHONY: clean
 clean:
 	find . -type f -name "*.pyc" | xargs rm -fr
 	find . -type d -name __pycache__ | xargs rm -fr
 EOM
 
-echo "******************** Environment created! **********************"
-echo "**** Use 'source env/bin/activate to enter new environment. ****"
+echo ""
+echo ""
+echo "*****************************************************************"
+echo "********************* Environment created! **********************"
+echo "**** Use 'source $BIN_DIR/activate to enter new environment. ****"
+echo "*****************************************************************"
