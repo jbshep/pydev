@@ -31,6 +31,7 @@ cat >.pylintrc <<EOPL
 [DESIGN]
 disable=missing-function-docstring,missing-module-docstring
 argument-rgx=[a-z\_][a-z0-9_]{0,39}$
+good-names=a,b,c,i,j,k,e,m,n,p,q,r,s,t,u,v,w,x,y,z,_,pk,st,rev
 EOPL
 
 cat >Makefile <<EOM
