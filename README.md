@@ -1,6 +1,6 @@
 # pydev
 
-This repository contains a script that BVU students can run to build a Python development environment quickly.  By running the command below, the import script will accomplish the following:
+This repository contains a script that BVU students can run to build a Python development environment quickly.  By running the command below (see [Usage](#usage)), the import script will accomplish the following:
 
 1. Setup a virtual environment.
 2. Install a Python toolset for linting, type-checking, and unit testing.
@@ -24,10 +24,10 @@ make all
 
 Tools currently installed by the `import.sh` script are:
 
-* `black`
-* `mypy`
-* `pylint`
-* `pytest`
+* [`black`](https://black.readthedocs.io/)
+* [`mypy`](https://mypy-lang.org/)
+* [`pylint`](https://pypi.org/project/pylint/)
+* [`pytest`](https://pytest.org/)
 
 The script will deposit the following files/directories into your current directory:
 
