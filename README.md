@@ -14,10 +14,17 @@ To install to your development directory, type the following.
 curl https://raw.githubusercontent.com/jbshep/pydev/main/import.sh | bash
 ```
 
-Once installed, all verification checks can be run using the command:
+Once installed, developers should enter the virtual environment by typing:
 
 ```
-make all
+source env/bin/activate        # if using macOS or Linux
+source env/Scripts/activate    # if using Windows
+```
+
+And then, once in the virtual environment, all verification checks can be run using the command:
+
+```
+make
 ```
 
 ## Installed Tools and Files/Directories
