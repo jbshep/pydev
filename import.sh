@@ -15,8 +15,10 @@ else
     fi
 fi
 
+echo "Creating src and tests directories."
 mkdir src
 mkdir tests
+echo "Creating virtual environment 'env'."
 $PYTHON_EXEC -m venv env
 
 # Is this Mac/Linux or Windows?
@@ -25,8 +27,15 @@ if [[ -d env/Scripts ]]; then
     BIN_DIR=env/Scripts
 fi
 
-source $BIN_DIR/activate && pip install black mypy pytest pylint && pip freeze >requirements.txt
+echo "Installing Python libraries."
+source $BIN_DIR/activate && pip install --upgrade pip >/dev/null && pip install black mypy pytest pylint >/dev/null  && pip freeze >requirements.txt
 
+if [[ $? -ne 0 ]]; then
+    echo "ERROR: Library installation failed.  Exiting..."
+    exit 1
+fi
+
+echo "Creating .pylintrc."
 cat >.pylintrc <<EOPL
 [DESIGN]
 disable=missing-function-docstring,missing-module-docstring
@@ -34,6 +43,7 @@ argument-rgx=[a-z\_][a-z0-9_]{0,39}$
 good-names=a,b,c,i,j,k,e,m,n,p,q,r,s,t,u,v,w,x,y,z,_,pk,st,rev
 EOPL
 
+echo "Creating Makefile."
 cat >Makefile <<EOM
 .PHONY: all
 all: codestyle typecheck lint test
@@ -62,10 +72,8 @@ EOM
 
 echo ""
 echo ""
-echo ""
-echo ""
 echo "*****************************************************************"
-echo "********************* Environment created! **********************"
+echo "**************************** DONE! ******************************"
 echo "*****************************************************************"
 echo ""
 echo ""
