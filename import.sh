@@ -64,6 +64,10 @@ lint:
 test:
 	python -m pytest tests/
 
+.PHONY: build
+build:
+	pip install -e .
+
 .PHONY: clean
 clean:
 	find . -type f -name "*.pyc" | xargs rm -fr
