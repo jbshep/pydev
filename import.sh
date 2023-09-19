@@ -46,7 +46,7 @@ EOPL
 echo "Creating Makefile."
 cat >Makefile <<EOM
 .PHONY: all
-all: codestyle typecheck lint test
+all: codestyle typecheck lint test build
 
 .PHONY: codestyle
 codestyle:
