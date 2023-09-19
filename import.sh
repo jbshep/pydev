@@ -28,7 +28,7 @@ if [[ -d env/Scripts ]]; then
 fi
 
 echo "Installing Python libraries."
-source $BIN_DIR/activate && pip install --upgrade pip >/dev/null && pip install black mypy pytest pylint >/dev/null  && pip freeze >requirements.txt
+source $BIN_DIR/activate && python -m pip install --upgrade pip >/dev/null && python -m pip install black mypy pytest pylint >/dev/null  && python -m pip freeze >requirements.txt
 
 if [[ $? -ne 0 ]]; then
     echo "ERROR: Library installation failed.  Exiting..."
@@ -50,19 +50,19 @@ all: codestyle typecheck lint test
 
 .PHONY: codestyle
 codestyle:
-	black -l 79 src/ tests/
+	python -m black -l 79 src/ tests/
 
 .PHONY: typecheck
 typecheck:
-	mypy --ignore-missing-imports src/
+	python -m mypy --ignore-missing-imports src/
 
 .PHONY: lint
 lint:
-	pylint src/
+	python -m pylint src/
 
 .PHONY: test
 test:
-	pytest tests/
+	python -m pytest tests/
 
 .PHONY: clean
 clean:
