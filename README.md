@@ -5,6 +5,7 @@ This repository contains a script that BVU students can run to build a Python de
 1. Setup a virtual environment.
 2. Install a Python toolset for linting, type-checking, and unit testing.
 3. Create a Makefile to automatically run all of the tools in #2.
+4. Create a setup.py file for packaging your software.
 
 ## Usage
 
@@ -39,6 +40,7 @@ Tools currently installed by the `import.sh` script are:
 The script will deposit the following files/directories into your current directory:
 
 * a Makefile
+* a setup.py file
 * a pylint configuration file (`.pylintrc`)
 * `env`: the virtual environment directory
 
