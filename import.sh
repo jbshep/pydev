@@ -70,6 +70,23 @@ clean:
 	find . -type d -name __pycache__ | xargs rm -fr
 EOM
 
+echo "Creating setup.py.  BE SURE TO MODIFY THIS FILE."
+cat >setup.py <<EOSETUP
+from setuptools import find_packages, setup
+
+setup(
+    name="FIXME",
+    version="0.1",
+    packages=find_packages(where="src"),
+    package_dir={"": "src"},
+    entry_points={
+        "console_scripts": [
+            "FIXME=FIXME.__main__:main",
+        ]
+    },
+)
+EOSETUP
+
 echo ""
 echo ""
 echo "*****************************************************************"
