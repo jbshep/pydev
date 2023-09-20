@@ -22,11 +22,15 @@ source env/bin/activate        # if using macOS or Linux
 source env/Scripts/activate    # if using Windows
 ```
 
-And then, once in the virtual environment, all verification checks can be run using the command:
+Code should be placed in the `src` directory.  Tests go in the `tests` directory.  Students should modify `setup.py` to specify the main function to be run when executing the package.
+
+All verification checks and the package build can be run using the command:
 
 ```
 make
 ```
+
+Consult the `Makefile` for individual targets if you don't wish to run all checks and the build.
 
 ## Installed Tools and Files/Directories
 
