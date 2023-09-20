@@ -12,7 +12,7 @@ This repository contains a script that BVU students can run to build a Python de
 To install to your development directory, type the following.
 
 ```
-curl https://raw.githubusercontent.com/jbshep/pydev/main/import.sh | bash
+curl -sS https://raw.githubusercontent.com/jbshep/pydev/main/import.sh | bash
 ```
 
 Once installed, developers should enter the virtual environment by typing:
